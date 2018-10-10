@@ -9,6 +9,8 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 
+//this is a test
+
 namespace FlashPointsAndroid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
