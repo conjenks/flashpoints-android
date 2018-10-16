@@ -80,27 +80,19 @@ namespace FlashPointsAndroid
 
             if (id == Resource.Id.nav_camera)
             {
-                // Handle the camera action
+                // QR code scanning code (or reference to it) goes here
             }
             else if (id == Resource.Id.nav_gallery)
             {
-
-            }
-            else if (id == Resource.Id.nav_slideshow)
-            {
-
+                // Prize gallery code (or reference to it) goes here
             }
             else if (id == Resource.Id.nav_manage)
             {
-
+                // Tools (?) code (or reference to it) goes here
             }
             else if (id == Resource.Id.nav_share)
             {
-
-            }
-            else if (id == Resource.Id.nav_send)
-            {
-
+                // "Share" code (or reference to it) goes here
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
