@@ -1,30 +1,39 @@
 ﻿using System;
-using Android;
+using System.Linq;
 using Android.App;
+using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
-
-//this is a test
-//Penis
-// test
+using Android.Widget;
+using FlashPoints.Data;
 
 namespace FlashPointsAndroid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        // This variable represents our Azure datbase access.
+        public ApplicationDbContext db;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            // this is connor
+
+            string email = Intent.GetStringExtra("email") ?? null;
+
+            // Here we initialize our database connection.
+            if (db == null)
+            {
+                db = new ApplicationDbContext();
+            }
+            
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
@@ -35,6 +44,19 @@ namespace FlashPointsAndroid
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            if (email == null)
+            {
+                var login = new Intent(this, typeof(LoginActivity));
+                this.StartActivity(login);
+                Finish();
+            } else
+            {
+                var headerView = navigationView.GetHeaderView(0);
+                var text = headerView.FindViewById<TextView>(Resource.Id.email);
+                
+                text.Text = email;
+            }
         }
 
         public override void OnBackPressed()
@@ -69,8 +91,13 @@ namespace FlashPointsAndroid
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
+
+            // Testing a databse call. These two lines set int test equal to the PointValue of the first Event in the database.
+            var ev = db.Event.FirstOrDefault();
+            int test = ev.PointValue;
+
             View view = (View) sender;
-            Snackbar.Make(view, "QR code scanning coming soon", Snackbar.LengthLong)
+            Snackbar.Make(view, "point value is " + test.ToString(), Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
 
