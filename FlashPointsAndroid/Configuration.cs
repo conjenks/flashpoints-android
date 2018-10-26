@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace FlashPointsAndroid
+﻿namespace FlashPointsAndroid
 {
+    // Values used for Google OAuth. Can be added to if it's useful to us.
     public static class Configuration
     {
         public const string ClientId = "1013410030973-i49a6rdthd184v5o84hjffmvvb7ittni.apps.googleusercontent.com";

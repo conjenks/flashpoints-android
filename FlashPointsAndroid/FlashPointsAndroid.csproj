@@ -64,7 +64,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Authentication\GoogleAuthenticator.cs" />
-    <Compile Include="GoogleAuthInterceptor.cs" />
+    <Compile Include="Authentication\GoogleAuthInterceptor.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Event.cs" />

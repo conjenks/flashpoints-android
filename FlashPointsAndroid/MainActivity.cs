@@ -10,6 +10,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using FlashPoints.Data;
+using FlashPoints.Models;
 
 namespace FlashPointsAndroid
 {
@@ -25,15 +26,13 @@ namespace FlashPointsAndroid
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-
-            string email = Intent.GetStringExtra("email") ?? null;
-
+            
             // Here we initialize our database connection.
             if (db == null)
             {
                 db = new ApplicationDbContext();
             }
-            
+
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
@@ -45,24 +44,39 @@ namespace FlashPointsAndroid
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
+            // Check for an email string passed to this Activity.
+            string email = Intent.GetStringExtra("email") ?? null;
             if (email == null)
             {
+                // If email is null, the user is not logged in. Redirect them to the LoginActivity.
                 var login = new Intent(this, typeof(LoginActivity));
                 this.StartActivity(login);
                 Finish();
-            } else
+            }
+            else
             {
+                // Otherwise, they're logged in, and we should display their email in the left menu.
                 var headerView = navigationView.GetHeaderView(0);
                 var text = headerView.FindViewById<TextView>(Resource.Id.email);
-                
                 text.Text = email;
+
+                // Query the database for this user.
+                var user = db.User.Where(u => u.Email == email);
+                // If this user is not in the database, add them.
+                if (user == null)
+                {
+                    var newUser = new User();
+                    newUser.Email = email;
+                    db.User.Add(newUser);
+                    db.SaveChanges();
+                }
             }
         }
 
         public override void OnBackPressed()
         {
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
                 drawer.CloseDrawer(GravityCompat.Start);
             }
@@ -96,7 +110,7 @@ namespace FlashPointsAndroid
             var ev = db.Event.FirstOrDefault();
             int test = ev.PointValue;
 
-            View view = (View) sender;
+            View view = (View)sender;
             Snackbar.Make(view, "point value is " + test.ToString(), Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }

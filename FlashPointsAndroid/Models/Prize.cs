@@ -10,7 +10,11 @@ namespace FlashPoints.Models
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+
         public int PointPrice { get; set; }
         public string ImagePath { get; set; }
+        public int CurrentInventory { get; set; }
+        public string Location { get; set; }
+        public float ActualCost { get; set; }
     }
 }
