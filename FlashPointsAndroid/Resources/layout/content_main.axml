@@ -30,6 +30,13 @@
 		android:textSize="20dp"
 		android:textColor="#0000FF"
 		android:text="3,200" />
+
+	<!-- CLEAN SOLUTION OR THIS WON'T WORK-->
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Add Ten"
+		android:id="@+id/addTenPoints" />
 	
 
 </RelativeLayout>

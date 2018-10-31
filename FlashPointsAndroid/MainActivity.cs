@@ -36,6 +36,9 @@ namespace FlashPointsAndroid
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
+            Button b1 = FindViewById<Button>(Resource.Id.addTenPoints);
+            b1.Click += ButtonOnClick;
+
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
@@ -112,6 +115,13 @@ namespace FlashPointsAndroid
 
             View view = (View)sender;
             Snackbar.Make(view, "point value is " + test.ToString(), Snackbar.LengthLong)
+                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+        }
+
+        private void ButtonOnClick(object sender, EventArgs eventArgs)
+        {
+            View view = this.FindViewById(Android.Resource.Id.Content);
+            Snackbar.Make(view, "hello", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
 
