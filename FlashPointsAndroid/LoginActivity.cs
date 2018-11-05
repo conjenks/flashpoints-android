@@ -49,6 +49,7 @@ namespace FlashPointsAndroid
             bundle.PutString("email", email);
             intent.PutExtras(bundle);
             StartActivity(intent);
+            Finish();
         }
 
         public void OnAuthenticationCanceled()

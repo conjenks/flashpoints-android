@@ -26,6 +26,16 @@ namespace FlashPointsAndroid
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::FlashPointsAndroid.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::FlashPointsAndroid.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::FlashPointsAndroid.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::FlashPointsAndroid.Resource.Id.webview;
+			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::FlashPointsAndroid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::FlashPointsAndroid.Resource.String.ApplicationName;
+			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::FlashPointsAndroid.Resource.String.Hello;
+			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::FlashPointsAndroid.Resource.String.title_activity_webview;
+			global::PCLCrypto.Resource.String.ApplicationName = global::FlashPointsAndroid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::FlashPointsAndroid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::FlashPointsAndroid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::FlashPointsAndroid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Attribute.font = global::FlashPointsAndroid.Resource.Attribute.font;
@@ -2425,26 +2435,26 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020087
-			public const int avd_hide_password_1 = 2130837639;
+			// aapt resource value: 0x7f02008b
+			public const int avd_hide_password_1 = 2130837643;
 			
-			// aapt resource value: 0x7f020088
-			public const int avd_hide_password_2 = 2130837640;
+			// aapt resource value: 0x7f02008c
+			public const int avd_hide_password_2 = 2130837644;
 			
-			// aapt resource value: 0x7f020089
-			public const int avd_hide_password_3 = 2130837641;
+			// aapt resource value: 0x7f02008d
+			public const int avd_hide_password_3 = 2130837645;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02008a
-			public const int avd_show_password_1 = 2130837642;
+			// aapt resource value: 0x7f02008e
+			public const int avd_show_password_1 = 2130837646;
 			
-			// aapt resource value: 0x7f02008b
-			public const int avd_show_password_2 = 2130837643;
+			// aapt resource value: 0x7f02008f
+			public const int avd_show_password_2 = 2130837647;
 			
-			// aapt resource value: 0x7f02008c
-			public const int avd_show_password_3 = 2130837644;
+			// aapt resource value: 0x7f020090
+			public const int avd_show_password_3 = 2130837648;
 			
 			// aapt resource value: 0x7f020055
 			public const int common_full_open_on_phone = 2130837589;
@@ -2549,52 +2559,64 @@ namespace FlashPointsAndroid
 			public const int ic_menu_slideshow = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int navigation_empty_icon = 2130837623;
+			public const int ic_plusone_medium_off_client = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_action_background = 2130837624;
+			public const int ic_plusone_small_off_client = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_bg = 2130837625;
+			public const int ic_plusone_standard_off_client = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_bg_low = 2130837626;
+			public const int ic_plusone_tall_off_client = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_bg_low_normal = 2130837627;
+			public const int navigation_empty_icon = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_bg_low_pressed = 2130837628;
+			public const int notification_action_background = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int notification_bg_normal = 2130837629;
+			public const int notification_bg = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int notification_bg_normal_pressed = 2130837630;
+			public const int notification_bg_low = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int notification_icon_background = 2130837631;
-			
-			// aapt resource value: 0x7f020085
-			public const int notification_template_icon_bg = 2130837637;
-			
-			// aapt resource value: 0x7f020086
-			public const int notification_template_icon_low_bg = 2130837638;
+			public const int notification_bg_low_normal = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int notification_tile_bg = 2130837632;
+			public const int notification_bg_low_pressed = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int notify_panel_notification_icon_bg = 2130837633;
+			public const int notification_bg_normal = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int side_nav_bar = 2130837634;
+			public const int notification_bg_normal_pressed = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int tooltip_frame_dark = 2130837635;
+			public const int notification_icon_background = 2130837635;
+			
+			// aapt resource value: 0x7f020089
+			public const int notification_template_icon_bg = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int notification_template_icon_low_bg = 2130837642;
 			
 			// aapt resource value: 0x7f020084
-			public const int tooltip_frame_light = 2130837636;
+			public const int notification_tile_bg = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int notify_panel_notification_icon_bg = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int side_nav_bar = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int tooltip_frame_dark = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int tooltip_frame_light = 2130837640;
 			
 			static Drawable()
 			{
@@ -2621,8 +2643,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b003d
 			public const int META = 2131427389;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int MyPoints = 2131427479;
+			// aapt resource value: 0x7f0b0098
+			public const int MyPoints = 2131427480;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int SHIFT = 2131427390;
@@ -2630,8 +2652,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b003f
 			public const int SYM = 2131427391;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int action0 = 2131427499;
+			// aapt resource value: 0x7f0b00ad
+			public const int action0 = 2131427501;
 			
 			// aapt resource value: 0x7f0b0083
 			public const int action_bar = 2131427459;
@@ -2654,17 +2676,17 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0061
 			public const int action_bar_title = 2131427425;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int action_container = 2131427496;
+			// aapt resource value: 0x7f0b00aa
+			public const int action_container = 2131427498;
 			
 			// aapt resource value: 0x7f0b0084
 			public const int action_context_bar = 2131427460;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int action_divider = 2131427503;
+			// aapt resource value: 0x7f0b00b1
+			public const int action_divider = 2131427505;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int action_image = 2131427497;
+			// aapt resource value: 0x7f0b00ab
+			public const int action_image = 2131427499;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -2681,14 +2703,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0063
 			public const int action_mode_close_button = 2131427427;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int action_settings = 2131427522;
+			// aapt resource value: 0x7f0b00c6
+			public const int action_settings = 2131427526;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int action_text = 2131427498;
+			// aapt resource value: 0x7f0b00ac
+			public const int action_text = 2131427500;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int actions = 2131427512;
+			// aapt resource value: 0x7f0b00ba
+			public const int actions = 2131427514;
 			
 			// aapt resource value: 0x7f0b0064
 			public const int activity_chooser_view_content = 2131427428;
@@ -2726,11 +2748,17 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0045
 			public const int bottom = 2131427397;
 			
+			// aapt resource value: 0x7f0b0097
+			public const int buttonLoginUser = 2131427479;
+			
 			// aapt resource value: 0x7f0b006a
 			public const int buttonPanel = 2131427434;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int cancel_action = 2131427500;
+			// aapt resource value: 0x7f0b00bd
+			public const int cameraView = 2131427517;
+			
+			// aapt resource value: 0x7f0b00ae
+			public const int cancel_action = 2131427502;
 			
 			// aapt resource value: 0x7f0b004c
 			public const int center = 2131427404;
@@ -2744,8 +2772,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b007a
 			public const int checkbox = 2131427450;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int chronometer = 2131427508;
+			// aapt resource value: 0x7f0b00b6
+			public const int chronometer = 2131427510;
 			
 			// aapt resource value: 0x7f0b0055
 			public const int clip_horizontal = 2131427413;
@@ -2756,14 +2784,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0041
 			public const int collapseActionView = 2131427393;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int container = 2131427482;
+			// aapt resource value: 0x7f0b009c
+			public const int container = 2131427484;
 			
 			// aapt resource value: 0x7f0b006d
 			public const int contentPanel = 2131427437;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int coordinator = 2131427483;
+			// aapt resource value: 0x7f0b009d
+			public const int coordinator = 2131427485;
 			
 			// aapt resource value: 0x7f0b0074
 			public const int custom = 2131427444;
@@ -2780,20 +2808,20 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0067
 			public const int default_activity_button = 2131427431;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int design_bottom_sheet = 2131427485;
+			// aapt resource value: 0x7f0b009f
+			public const int design_bottom_sheet = 2131427487;
+			
+			// aapt resource value: 0x7f0b00a6
+			public const int design_menu_item_action_area = 2131427494;
+			
+			// aapt resource value: 0x7f0b00a5
+			public const int design_menu_item_action_area_stub = 2131427493;
 			
 			// aapt resource value: 0x7f0b00a4
-			public const int design_menu_item_action_area = 2131427492;
+			public const int design_menu_item_text = 2131427492;
 			
 			// aapt resource value: 0x7f0b00a3
-			public const int design_menu_item_action_area_stub = 2131427491;
-			
-			// aapt resource value: 0x7f0b00a2
-			public const int design_menu_item_text = 2131427490;
-			
-			// aapt resource value: 0x7f0b00a1
-			public const int design_navigation_view = 2131427489;
+			public const int design_navigation_view = 2131427491;
 			
 			// aapt resource value: 0x7f0b0029
 			public const int disableHome = 2131427369;
@@ -2804,14 +2832,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0085
 			public const int edit_query = 2131427461;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int email = 2131427495;
+			// aapt resource value: 0x7f0b00a9
+			public const int email = 2131427497;
 			
 			// aapt resource value: 0x7f0b0038
 			public const int end = 2131427384;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int end_padder = 2131427514;
+			// aapt resource value: 0x7f0b00bc
+			public const int end_padder = 2131427516;
 			
 			// aapt resource value: 0x7f0b0047
 			public const int enterAlways = 2131427399;
@@ -2849,8 +2877,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b000a
 			public const int ghost_view = 2131427338;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int googleLoginButton = 2131427494;
+			// aapt resource value: 0x7f0b00a8
+			public const int googleLoginButton = 2131427496;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int home = 2131427333;
@@ -2861,8 +2889,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0069
 			public const int icon = 2131427433;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int icon_group = 2131427513;
+			// aapt resource value: 0x7f0b00bb
+			public const int icon_group = 2131427515;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int icon_only = 2131427360;
@@ -2873,8 +2901,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0066
 			public const int image = 2131427430;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int info = 2131427509;
+			// aapt resource value: 0x7f0b00b7
+			public const int info = 2131427511;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int italic = 2131427424;
@@ -2882,8 +2910,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0000
 			public const int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int largeLabel = 2131427481;
+			// aapt resource value: 0x7f0b009b
+			public const int largeLabel = 2131427483;
 			
 			// aapt resource value: 0x7f0b0050
 			public const int left = 2131427408;
@@ -2903,14 +2931,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0068
 			public const int list_item = 2131427432;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int masked = 2131427517;
+			// aapt resource value: 0x7f0b00c1
+			public const int masked = 2131427521;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int media_actions = 2131427502;
+			// aapt resource value: 0x7f0b00b0
+			public const int media_actions = 2131427504;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int message = 2131427515;
+			// aapt resource value: 0x7f0b00bf
+			public const int message = 2131427519;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int middle = 2131427385;
@@ -2921,23 +2949,23 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0030
 			public const int multiply = 2131427376;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int nav_camera = 2131427518;
+			// aapt resource value: 0x7f0b00c2
+			public const int nav_camera = 2131427522;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int nav_gallery = 2131427519;
+			// aapt resource value: 0x7f0b00c3
+			public const int nav_gallery = 2131427523;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int nav_manage = 2131427520;
+			// aapt resource value: 0x7f0b00c4
+			public const int nav_manage = 2131427524;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int nav_share = 2131427521;
+			// aapt resource value: 0x7f0b00c5
+			public const int nav_share = 2131427525;
 			
 			// aapt resource value: 0x7f0b0093
 			public const int nav_view = 2131427475;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int navigation_header_container = 2131427488;
+			// aapt resource value: 0x7f0b00a2
+			public const int navigation_header_container = 2131427490;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int never = 2131427395;
@@ -2948,14 +2976,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0027
 			public const int normal = 2131427367;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int notification_background = 2131427511;
+			// aapt resource value: 0x7f0b00b9
+			public const int notification_background = 2131427513;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int notification_main_column = 2131427505;
+			// aapt resource value: 0x7f0b00b3
+			public const int notification_main_column = 2131427507;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int notification_main_column_container = 2131427504;
+			// aapt resource value: 0x7f0b00b2
+			public const int notification_main_column_container = 2131427506;
 			
 			// aapt resource value: 0x7f0b0053
 			public const int parallax = 2131427411;
@@ -2969,6 +2997,9 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0054
 			public const int pin = 2131427412;
 			
+			// aapt resource value: 0x7f0b0099
+			public const int pointBalance = 2131427481;
+			
 			// aapt resource value: 0x7f0b0006
 			public const int progress_circular = 2131427334;
 			
@@ -2981,11 +3012,11 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0051
 			public const int right = 2131427409;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int right_icon = 2131427510;
+			// aapt resource value: 0x7f0b00b8
+			public const int right_icon = 2131427512;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int right_side = 2131427506;
+			// aapt resource value: 0x7f0b00b4
+			public const int right_side = 2131427508;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int save_image_matrix = 2131427340;
@@ -3059,14 +3090,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b002d
 			public const int showTitle = 2131427373;
 			
-			// aapt resource value: 0x7f0b0098
-			public const int smallLabel = 2131427480;
+			// aapt resource value: 0x7f0b009a
+			public const int smallLabel = 2131427482;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int snackbar_action = 2131427487;
+			// aapt resource value: 0x7f0b00a1
+			public const int snackbar_action = 2131427489;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int snackbar_text = 2131427486;
+			// aapt resource value: 0x7f0b00a0
+			public const int snackbar_text = 2131427488;
 			
 			// aapt resource value: 0x7f0b004b
 			public const int snap = 2131427403;
@@ -3092,8 +3123,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0052
 			public const int start = 2131427410;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int status_bar_latest_event_content = 2131427501;
+			// aapt resource value: 0x7f0b00af
+			public const int status_bar_latest_event_content = 2131427503;
 			
 			// aapt resource value: 0x7f0b007d
 			public const int submenuarrow = 2131427453;
@@ -3119,8 +3150,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0070
 			public const int textSpacerNoTitle = 2131427440;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int text_input_password_toggle = 2131427493;
+			// aapt resource value: 0x7f0b00a7
+			public const int text_input_password_toggle = 2131427495;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int textinput_counter = 2131427348;
@@ -3128,8 +3159,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0015
 			public const int textinput_error = 2131427349;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int time = 2131427507;
+			// aapt resource value: 0x7f0b00b5
+			public const int time = 2131427509;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int title = 2131427356;
@@ -3149,8 +3180,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0075
 			public const int topPanel = 2131427445;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int touch_outside = 2131427484;
+			// aapt resource value: 0x7f0b009e
+			public const int touch_outside = 2131427486;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int transition_current_scene = 2131427343;
@@ -3167,6 +3198,9 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0013
 			public const int transition_transform = 2131427347;
 			
+			// aapt resource value: 0x7f0b00be
+			public const int txtResult = 2131427518;
+			
 			// aapt resource value: 0x7f0b0035
 			public const int uniform = 2131427381;
 			
@@ -3179,8 +3213,8 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int visible = 2131427516;
+			// aapt resource value: 0x7f0b00c0
+			public const int visible = 2131427520;
 			
 			// aapt resource value: 0x7f0b0094
 			public const int webview = 2131427476;
@@ -3437,19 +3471,22 @@ namespace FlashPointsAndroid
 			public const int notification_template_part_time = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_item_material = 2130968637;
+			public const int qr_code_scanner = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int select_dialog_multichoice_material = 2130968638;
+			public const int select_dialog_item_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int select_dialog_singlechoice_material = 2130968639;
+			public const int select_dialog_multichoice_material = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int support_simple_spinner_dropdown_item = 2130968640;
+			public const int select_dialog_singlechoice_material = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int tooltip = 2130968641;
+			public const int support_simple_spinner_dropdown_item = 2130968641;
+			
+			// aapt resource value: 0x7f040042
+			public const int tooltip = 2130968642;
 			
 			static Layout()
 			{
@@ -3504,6 +3541,12 @@ namespace FlashPointsAndroid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f08003a
+			public const int ApplicationName = 2131230778;
+			
+			// aapt resource value: 0x7f080039
+			public const int Hello = 2131230777;
 			
 			// aapt resource value: 0x7f080012
 			public const int abc_action_bar_home_description = 2131230738;
@@ -3592,11 +3635,11 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f080022
 			public const int abc_toolbar_collapse_description = 2131230754;
 			
-			// aapt resource value: 0x7f08003c
-			public const int action_settings = 2131230780;
+			// aapt resource value: 0x7f08003e
+			public const int action_settings = 2131230782;
 			
-			// aapt resource value: 0x7f080039
-			public const int app_name = 2131230777;
+			// aapt resource value: 0x7f08003b
+			public const int app_name = 2131230779;
 			
 			// aapt resource value: 0x7f080030
 			public const int appbar_scrolling_view_behavior = 2131230768;
@@ -3658,14 +3701,14 @@ namespace FlashPointsAndroid
 			// aapt resource value: 0x7f080010
 			public const int common_signin_button_text_long = 2131230736;
 			
+			// aapt resource value: 0x7f08003f
+			public const int googleLogin = 2131230783;
+			
 			// aapt resource value: 0x7f08003d
-			public const int googleLogin = 2131230781;
+			public const int navigation_drawer_close = 2131230781;
 			
-			// aapt resource value: 0x7f08003b
-			public const int navigation_drawer_close = 2131230779;
-			
-			// aapt resource value: 0x7f08003a
-			public const int navigation_drawer_open = 2131230778;
+			// aapt resource value: 0x7f08003c
+			public const int navigation_drawer_open = 2131230780;
 			
 			// aapt resource value: 0x7f080033
 			public const int password_toggle_content_description = 2131230771;

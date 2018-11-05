@@ -7,11 +7,13 @@
 	android:layout_height="match_parent"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	tools:showIn="@layout/app_bar_main">
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:text="What's Up World" />
+	<Button
+     android:id="@+id/buttonLoginUser"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+	android:layout_centerInParent="true"
+     android:onClick="LoginUser"
+     android:text="Sign In" />
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="20dp"
+		android:id="@+id/pointBalance"
 		android:layout_below="@+id/MyPoints"
 		android:textSize="20dp"
 		android:textColor="#0000FF"

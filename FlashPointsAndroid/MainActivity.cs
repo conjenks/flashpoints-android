@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -11,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using FlashPoints.Data;
 using FlashPoints.Models;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace FlashPointsAndroid
 {
@@ -19,6 +21,10 @@ namespace FlashPointsAndroid
     {
         // This variable represents our Azure datbase access.
         public ApplicationDbContext db;
+        // Client reference.
+        MobileServiceClient client;
+        // Define an authenticated user.
+        private MobileServiceUser user;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,7 +32,9 @@ namespace FlashPointsAndroid
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            
+
+            client = new MobileServiceClient("https://flashpoints-mobile.azurewebsites.net");
+
             // Here we initialize our database connection.
             if (db == null)
             {
@@ -45,32 +53,34 @@ namespace FlashPointsAndroid
             navigationView.SetNavigationItemSelectedListener(this);
 
             // Check for an email string passed to this Activity.
-            string email = Intent.GetStringExtra("email") ?? null;
-            if (email == null)
-            {
-                // If email is null, the user is not logged in. Redirect them to the LoginActivity.
-                var login = new Intent(this, typeof(LoginActivity));
-                this.StartActivity(login);
-                Finish();
-            }
-            else
-            {
-                // Otherwise, they're logged in, and we should display their email in the left menu.
-                var headerView = navigationView.GetHeaderView(0);
-                var text = headerView.FindViewById<TextView>(Resource.Id.email);
-                text.Text = email;
+            //string email = Intent.GetStringExtra("email") ?? null;
+            //if (email == null)
+            //{
+            //    // If email is null, the user is not logged in. Redirect them to the LoginActivity.
+            //    //var login = new Intent(this, typeof(LoginActivity));
+            //    //StartActivity(login);
+            //}
+            //else
+            //{
+            //    // Otherwise, they're logged in, and we should display their email in the left menu.
+            //    var headerView = navigationView.GetHeaderView(0);
+            //    var text = headerView.FindViewById<TextView>(Resource.Id.email);
+            //    text.Text = email;
 
-                // Query the database for this user.
-                var user = db.User.Where(u => u.Email == email);
-                // If this user is not in the database, add them.
-                if (user == null)
-                {
-                    var newUser = new User();
-                    newUser.Email = email;
-                    db.User.Add(newUser);
-                    db.SaveChanges();
-                }
-            }
+            //    // Query the database for this user.
+            //    var user = db.User.Where(u => u.Email == email);
+            //    // If this user is not in the database, add them.
+            //    if (user.First() == null)
+            //    {
+            //        var newUser = new User();
+            //        newUser.Email = email;
+            //        db.User.Add(newUser);
+            //        db.SaveChanges();
+            //    }
+
+            //    var points = FindViewById<TextView>(Resource.Id.pointBalance);
+            //    points.Text = user.First().Points.ToString();
+            //}
         }
 
         public override void OnBackPressed()
@@ -107,12 +117,16 @@ namespace FlashPointsAndroid
         {
 
             // Testing a databse call. These two lines set int test equal to the PointValue of the first Event in the database.
-            var ev = db.Event.FirstOrDefault();
-            int test = ev.PointValue;
+            //var ev = db.Event.FirstOrDefault();
+            //int test = ev.PointValue;
 
-            View view = (View)sender;
-            Snackbar.Make(view, "point value is " + test.ToString(), Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            //View view = (View)sender;
+            //Snackbar.Make(view, "point value is " + test.ToString(), Snackbar.LengthLong)
+            //    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+
+            var qr = new Intent(this, typeof(QRCodeScannerActivity));
+            StartActivity(qr);
+            Finish();
         }
 
         public bool OnNavigationItemSelected(IMenuItem item)
@@ -121,7 +135,9 @@ namespace FlashPointsAndroid
 
             if (id == Resource.Id.nav_camera)
             {
-                // QR code scanning code (or reference to it) goes here
+                var qr = new Intent(this, typeof(QRCodeScannerActivity));
+                StartActivity(qr);
+                Finish();
             }
             else if (id == Resource.Id.nav_gallery)
             {
@@ -139,6 +155,54 @@ namespace FlashPointsAndroid
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        
+        private async Task<bool> Authenticate()
+        {
+            var success = false;
+            try
+            {
+                // Sign in with Azure AD using a server-managed flow.
+                user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, "flashpointsmobile");
+
+                var token = user.MobileServiceAuthenticationToken;
+
+                CreateAndShowDialog(string.Format("you are now logged in - {0}",
+                    user.UserId), "Logged in!");
+
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                CreateAndShowDialog(ex, "Authentication failed");
+            }
+            return success;
+        }
+
+        [Java.Interop.Export()]
+        public async void LoginUser(View view)
+        {
+            // Load data only after authentication succeeds.
+            if (await Authenticate())
+            {
+                //Hide the button after authentication succeeds.
+                FindViewById<Button>(Resource.Id.buttonLoginUser).Visibility = ViewStates.Gone;
+            }
+        }
+
+        void CreateAndShowDialog(Exception exception, string title)
+        {
+            CreateAndShowDialog(exception.Message, title);
+        }
+
+        void CreateAndShowDialog(string message, string title)
+        {
+            var builder = new Android.App.AlertDialog.Builder(this);
+
+            builder.SetMessage(message);
+            builder.SetTitle(title);
+            builder.Create().Show();
         }
     }
 }
