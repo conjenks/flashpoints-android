@@ -64,18 +64,21 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Authentication\GoogleAuthenticator.cs" />
-    <Compile Include="GoogleAuthInterceptor.cs" />
+    <Compile Include="Authentication\GoogleAuthInterceptor.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Prize.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="QRCodeScannerActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +144,9 @@
     <PackageReference Include="Xamarin.Android.Support.Compat">
       <Version>27.0.2.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design">
       <Version>27.0.2.1</Version>
     </PackageReference>
@@ -150,11 +156,17 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Identity">
       <Version>60.1142.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Vision">
+      <Version>60.1142.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\qr_code_scanner.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

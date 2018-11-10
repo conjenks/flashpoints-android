@@ -41,9 +41,7 @@ namespace FlashPointsAndroid
             // Send the URI to the Authenticator for continuation
             LoginActivity.Auth?.OnPageLoading(uri_netfx);
 
-            
-
-            this.Finish();
+            Finish();
 
             return;
         }

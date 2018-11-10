@@ -110,6 +110,11 @@ namespace FlashPointsAndroid
                     //vibrator.Vibrate(1000);
                     txtResult.Text = ((Barcode)qrcodes.ValueAt(0)).RawValue;
                 });
+
+                Intent main = new Intent(this, typeof(MainActivity));
+                main.PutExtra("qr", ((Barcode)qrcodes.ValueAt(0)).RawValue);
+                SetResult(Result.Ok, main);
+                Finish();
             }
         }
         public void Release()

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,6 +12,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using FlashPoints.Data;
+using FlashPoints.Models;
 
 namespace FlashPointsAndroid
 {
@@ -18,6 +21,7 @@ namespace FlashPointsAndroid
     {
         // This variable represents our Azure datbase access.
         public ApplicationDbContext db;
+        string email;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,7 +30,7 @@ namespace FlashPointsAndroid
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            string email = Intent.GetStringExtra("email") ?? null;
+            email = Intent.GetStringExtra("email") ?? null;
 
             // Here we initialize our database connection.
             if (db == null)
@@ -41,10 +45,7 @@ namespace FlashPointsAndroid
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
-
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this);
-
+            
             if (email == null)
             {
                 var login = new Intent(this, typeof(LoginActivity));
@@ -52,10 +53,43 @@ namespace FlashPointsAndroid
                 Finish();
             } else
             {
+                AddUserIfNotExists(email);
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
+
                 var headerView = navigationView.GetHeaderView(0);
                 var text = headerView.FindViewById<TextView>(Resource.Id.email);
-                
                 text.Text = email;
+
+                var user = db.User.Where(u => u.Email == email).First();
+
+                TextView points = FindViewById<TextView>(Resource.Id.pointValue);
+                points.Text = user.Points.ToString();
+
+            }
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (requestCode == 0 && resultCode == Result.Ok)
+            {
+                string qr = data.GetStringExtra("qr");
+                var ev = db.Event.Where(e => e.Title == qr).First();
+
+                var user = db.User.Where(u => u.Email == email).First();
+                user.Points += ev.PointValue;
+                db.SaveChanges();
+
+                TextView points = FindViewById<TextView>(Resource.Id.pointValue);
+                points.Text = user.Points.ToString();
+                
+                var text = "Thanks for attending: " + ev.Title + ". You earned " + ev.PointValue + " points!"; ;
+                ToastLength duration = ToastLength.Long;
+
+                Toast toast = Toast.MakeText(this, text, duration);
+                toast.Show();
             }
         }
 
@@ -107,7 +141,8 @@ namespace FlashPointsAndroid
 
             if (id == Resource.Id.nav_camera)
             {
-                // QR code scanning code (or reference to it) goes here
+                var qr = new Intent(this, typeof(QRCodeScannerActivity));
+                StartActivityForResult(qr, 0);
             }
             else if (id == Resource.Id.nav_gallery)
             {
@@ -125,6 +160,22 @@ namespace FlashPointsAndroid
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        public void AddUserIfNotExists(string email)
+        {
+            var query = db.User.Where(e => e.Email == email);
+
+            if (query.Count() == 0)
+            {
+
+                User newUser = new User();
+                newUser.Email = email;
+                newUser.PrizesRedeemed = new List<PrizeRedeemed>();
+                newUser.EventsAttended = new List<EventAttended>();
+                db.User.Add(newUser);
+                db.SaveChanges();
+            }
         }
     }
 }

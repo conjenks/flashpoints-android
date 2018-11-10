@@ -11,7 +11,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
-		android:text="What's Up World" />
+		android:text="What should we put here?" />
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -19,17 +19,17 @@
 		android:layout_marginTop="20dp"
 		android:id="@+id/MyPoints"
 		android:textSize="20dp"
-		android:textColor="#0000FF"
+		android:textColor="#003876"
 		android:text="My Points" />
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="20dp"
+		android:id="@+id/pointValue"
 		android:layout_below="@+id/MyPoints"
 		android:textSize="20dp"
-		android:textColor="#0000FF"
-		android:text="3,200" />
+		android:textColor="#003876"/>
 	
 
 </RelativeLayout>
