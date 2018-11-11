@@ -11,12 +11,25 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
-		android:text="What should we put here?" />
+		android:id="@+id/caption"
+		android:textSize="10dp"
+		android:layout_margin="20dp"
+		android:textColor="#003876"
+		android:text="Redeem prizes, view the calendar or request events in our web app!" />
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="20dp"
+		android:id="@+id/email"
+		android:textSize="16dp"
+		android:textColor="#f0b310"
+		android:text="email@kent.edu" />
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="60dp"
 		android:id="@+id/MyPoints"
 		android:textSize="20dp"
 		android:textColor="#003876"
@@ -29,7 +42,40 @@
 		android:id="@+id/pointValue"
 		android:layout_below="@+id/MyPoints"
 		android:textSize="20dp"
-		android:textColor="#003876"/>
+		android:textColor="#003876"
+		android:text="0"/>
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
+		android:layout_centerHorizontal="true"
+		android:text="Scan Event QR Code"
+		android:layout_below="@+id/pointValue"
+		android:id="@+id/scanQR" />
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:layout_centerHorizontal="true"
+		android:text="Prize Catalog"
+		android:layout_below="@+id/caption"
+		android:id="@+id/prizeCatalog" />
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:layout_centerHorizontal="true"
+		android:text="Event Calendar"
+		android:layout_below="@+id/prizeCatalog"
+		android:id="@+id/eventCalendar" />
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:layout_centerHorizontal="true"
+		android:text="Request Event"
+		android:layout_below="@+id/eventCalendar"
+		android:id="@+id/requestEvent" />
 	
 
 </RelativeLayout>
