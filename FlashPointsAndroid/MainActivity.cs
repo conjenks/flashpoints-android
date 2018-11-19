@@ -134,7 +134,7 @@ namespace FlashPointsAndroid
 
                 } else
                 {
-                    txt = "You already attended this event! You can't redeem an event twice.";
+                    txt = "You already scanned this code! You can't attend an event twice.";
                 }
 
                 ToastLength duration = ToastLength.Long;
